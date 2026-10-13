@@ -1,35 +1,41 @@
 #include <stdio.h>
 #include <math.h>
  
-// double позволяет хранить дробные числа 
-// const константа переменной
+/**
+ * @brief вычисляет значение функции по заданной формуле
+ * @param x - значение переменной х
+ * @param y - значение переменной y
+ * @return рассчитанное значение
+ */
 double A(const double x, const double y, const double z);
-
+/**
+ * @brief вычисляет значение функции по заданной формуле
+ * @param x - значение переменной х
+ * @param y - значение переменной y
+ * @return рассчитанное значение
+ */
 double B(const double x, const double y, const double z);
-
+/**
+ * @brief точка входа в программу
+ * @return 0, если программа выполнена корректно, иначе не 0
+ */
 int main()
 {
-    //константы
     const double x = 0.5;
     const double y = 0.05;
     const double z = 0.7;
 
-    //результаты вычислений
     printf("a = %lf\n", A(x,y,z));
     printf("b = %lf\n", B(x,y,z));
-
-    // завершаем программу
     return 0;
 }
 
 double A(const double x, const double y, const double z)
 {
-    //пример который нужно решить
     return (pow(x, 2) * (x+1)) / (y - pow(sin(x+z), 2));
 }
 
 double B(const double x, const double y, const double z)
 {
-    //пример который нужно решить
     return sqrt((x*y)/z) + pow(cos(x+y),2);
 }
