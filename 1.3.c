@@ -1,33 +1,51 @@
+
 #include <stdio.h>
 
 /**
- * @brief вычисляет значение функции по заданной формуле
- * @param F сила тяги
- * @param A работа
- * @param s пройденный путь
- * @return рассчитанное значение
+ * @brief Считывает число типа double
+ * @return Введенное пользователем число
  */
-
- double F,A,s;
+double getDouble(void);
 
 /**
- * @brief точка входа в программу
- * @brief Считывает с клавиатуры занчение
- * @return 0, если программа выполнена корректно, иначе не 0
+ * @brief Вычисляет пройденный путь
+ * @param A Работа в килоджоулях
+ * @param F Сила тяги в ньютонах
+ * @return Пройденный путь в метрах
  */
+double Distance(double A, double F);
 
-int main()
+/**
+ * @brief Точка входа в программу
+ * @return 0, если программа выполнена корректно
+ */
+int main(void)
 {
+    double F = 0.0;
+    double A = 0.0;
+    double s = 0.0;
 
     printf("Введите силу тяги F: ");
-    scanf("%lf", &F);
+    F = getDouble();
 
     printf("Введите работу A: ");
-    scanf("%lf", &A);
-    
+    A = getDouble();
 
-    s = (A * 1000)/F;
+    s = Distance(A, F);
+
     printf("Пройденный путь: %.2f\n", s);
 
     return 0;
+}
+
+double getDouble(void)
+{
+    double value = 0.0;
+    scanf("%lf", &value);
+    return value;
+}
+
+double Distance(double A, double F)
+{
+    return (A * 1000.0) / F;
 }
