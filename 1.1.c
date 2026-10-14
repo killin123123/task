@@ -39,5 +39,5 @@ double A(const double x, const double y, const double z)
 
 double B(const double x, const double y, const double z)
 {
-    return sqrt((x*y)/z) + pow(cos(x+y),2);
+    return sqrt((x * y) / z) + pow(cos(pow(x + y, 2)), 2);
 }
