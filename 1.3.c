@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 
 /**
@@ -13,7 +12,7 @@ double getDouble(void);
  * @param F Сила тяги в ньютонах
  * @return Пройденный путь в метрах
  */
-double Distance(double A, double F);
+double Distance(const double A, const double F);
 
 /**
  * @brief Точка входа в программу
@@ -45,7 +44,7 @@ double getDouble(void)
     return value;
 }
 
-double Distance(double A, double F)
+double Distance(const double A, const double F)
 {
     return (A * 1000.0) / F;
 }
