@@ -14,7 +14,7 @@ double getDouble(void);
  * @param a Угол при вершине конуса в градусах
  * @return Радиус основания конуса
  */
-double Radius(double R, double a);
+double Radius(const double R, const double a);
 
 /**
  * @brief Вычисляет высоту конуса
@@ -22,7 +22,7 @@ double Radius(double R, double a);
  * @param a Угол при вершине конуса в градусах
  * @return Высота конуса
  */
-double Height(double R, double a);
+double Height(const double R, const double a);
 
 /**
  * @brief Вычисляет образующую конуса
@@ -30,7 +30,7 @@ double Height(double R, double a);
  * @param a Угол при вершине конуса в градусах
  * @return Образующая конуса
  */
-double SHeight(double R, double a);
+double SHeight(const double R, const double a);
 
 /**
  * @brief Вычисляет объем конуса
@@ -38,7 +38,7 @@ double SHeight(double R, double a);
  * @param h Высота конуса
  * @return Объем конуса
  */
-double Volume(double r, double h);
+double Volume(const double r, const double h);
 
 /**
  * @brief Вычисляет полную поверхность конуса
@@ -46,7 +46,7 @@ double Volume(double r, double h);
  * @param l Образующая конуса
  * @return Полная поверхность конуса
  */
-double SurfaceArea(double r, double l);
+double SurfaceArea(const double r, const double l);
 
 /**
  * @brief точка входа в программу
@@ -87,27 +87,27 @@ double getDouble(void)
     return value;
 }
 
-double Radius(double R, double a)
+double Radius(const double R, const double a)
 {
     return R * sin(a * 3.14 / 180.0);
 }
 
-double Height(double R, double a)
+double Height(const double R, const double a)
 {
     return R * (1 + cos(a * 3.14 / 360.0));
 }
 
-double SHeight(double R, double a)
+double SHeight(const double R, const double a)
 {
     return 2 * R * cos(a * 3.14 / 360.0);
 }
 
-double Volume(double r, double h)
+double Volume(const double r,  const double h)
 {
     return 3.14 * r * r * h / 3.0;
 }
 
-double SurfaceArea(double r, double l)
+double SurfaceArea(const double r, const double l)
 {
     return 3.14 * r * (r + l);
 }
