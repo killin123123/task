@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <math.h>
 
@@ -7,6 +6,13 @@
  * @return Введенное пользователем число
  */
 double getDouble(void);
+
+/**
+ * @brief Переводит угол из градусов в радианы
+ * @param a Угол при вершине конуса в градусах
+ * @return Угол в радианах
+ */
+double ToRadians(const double a);
 
 /**
  * @brief Вычисляет радиус основания конуса
@@ -89,25 +95,25 @@ double getDouble(void)
 
 double Radius(const double R, const double a)
 {
-    return R * sin(a * 3.14 / 180.0);
+    return R * sin(a * M_PI / 180.0);
 }
 
 double Height(const double R, const double a)
 {
-    return R * (1 + cos(a * 3.14 / 360.0));
+    return R * (1 + cos(a * M_PI / 360.0));
 }
 
 double SHeight(const double R, const double a)
 {
-    return 2 * R * cos(a * 3.14 / 360.0);
+    return 2 * R * cos(a * M_PI / 360.0);
 }
 
 double Volume(const double r,  const double h)
 {
-    return 3.14 * r * r * h / 3.0;
+    return M_PI * r * r * h / 3.0;
 }
 
 double SurfaceArea(const double r, const double l)
 {
-    return 3.14 * r * (r + l);
+    return M_PI * r * (r + l);
 }
